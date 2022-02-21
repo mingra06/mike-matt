@@ -63,7 +63,7 @@ public class Stack <T>{
         return item;
     }
 
-    public T peak() throws Exception {
+    public T peek() throws Exception {
         if (isEmpty()) throw new Exception("Empty peak");
 
         return content[size-1];
