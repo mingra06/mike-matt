@@ -31,7 +31,7 @@ public class Stack <T>{
 
     private void resize(int newSize){
         T[] copy = (T[]) new Object[newSize];
-        for (int i = 0; i < this.size - 1; i ++){
+        for (int i = 0; i < this.size; i ++){
             T item = this.content[i];
             copy[i] = item;
         }
@@ -50,8 +50,6 @@ public class Stack <T>{
     public T pop() throws Exception {
         if (size == 0) throw new Exception("Size is 0");
 
-        System.out.println("New Pop");
-        System.out.println("Popping: " + size);
         T item = content[size-1];
         content[size] = null;
 
@@ -59,7 +57,6 @@ public class Stack <T>{
 
         if(size > 0 && size <= content.length / 4)
         {
-            System.out.println("Resizing");
             resize(content.length/2);
         }
 
@@ -71,7 +68,6 @@ public class Stack <T>{
 
         return content[size-1];
     }
-
 
     public boolean isEmpty(){
         if(size > 0)
